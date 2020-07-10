@@ -10,9 +10,13 @@ Vue.component('task',{
         }
       },
     template: `
-    <div class="cur_case" @click="task_done()">
-    <p class="cur_case_p" >{{data.title}}</p>
+    <div v-if='!data.done' class="cur_case" @click="task_done()">
+    <p class="cur_case_p">{{data.title}}</p>
     <img class="done" src="img/empty.png">
+</div>
+<div v-else class="cur_case" @click="task_done()">
+<p class="cur_case_p done_c">{{data.title}}</p>
+<img class="done" src="img/add.png">
 </div>
     `
 });
@@ -22,6 +26,7 @@ var vue = new Vue({
     data: {
         new_task:{
             title:'',
+            done:'',
         },
         seen:false,
         isActive:false,
@@ -33,7 +38,8 @@ date: new Date(),
         add_task(){
             if(this.new_task.title != ''){
                 this.tasks.push({
-                    title: this.new_task.title
+                    title: this.new_task.title,
+                    done: 0
                 });
             }
             this.new_task.title='';
@@ -48,7 +54,12 @@ date: new Date(),
             }
         },
         action(id){
-            this.tasks.splice(id,1);
+            if(this.tasks[id].done){
+                this.tasks[id].done = 0;
+            } else {
+                this.tasks[id].done = 1;
+            }
+            return this.tasks[id].done;
           }
     }
 });
