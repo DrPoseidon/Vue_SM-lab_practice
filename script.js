@@ -3,15 +3,6 @@
 
 Vue.component('task',{
     props: ['data'],
-    data() {
-      return {
-      }
-    },
-    methods: {
-      task_done(){
-        this.$emit('task_done')
-      }
-    },
     template: `
     <div class="cur_case">
     <p class="cur_case_p">{{data.title}}</p>
