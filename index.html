@@ -13,11 +13,11 @@
             <div class="cur_date">
                 <p class="d">{{date.getDate()}}</p>
                 <div class="in_cur_date">
-                    <p class="m">{{['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентабрь','Ноябрь','Декабрь',''][date.getDay()]}}</p>
+                    <p class="m">{{['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентабрь','Ноябрь','Декабрь',''][date.getDay()+1]}}</p>
                     <p class="y">{{date.getFullYear()}}</p>
                 </div>
             </div>
-            <p class="weekday">{{['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'][date.getDay()+1]}}</p>
+            <p class="weekday">{{['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'][date.getDay()]}}</p>
         </div>
         <div class="list">
             <task @task_done="action(index)" :data="data" v-for="(data,index) in tasks" :key="index"></task>
