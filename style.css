@@ -8,6 +8,7 @@
 
 body{
     background-color: #f0efea;
+    
 }
 
 .main_div{
@@ -21,6 +22,7 @@ body{
     display: flex;
     flex-direction: column;
     padding: 70px;
+    transition: 0.5s;
 }
 
 .date_div{
@@ -47,10 +49,6 @@ body{
     margin-right: 10px;
 }
 
-.list{
-
-}
-
 .cur_case{
     display: flex;
     flex-direction: row;
@@ -74,6 +72,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     width: 100px;
+    transition: 0.5s;
 }
 
 .add_btn_img{
@@ -83,7 +82,8 @@ body{
 
 .invert{
     filter: invert(1);
-    transform: rotate(45deg);
+    transform: rotate(45deg) translate(-70%,0);
+    transition: 0.5s;
 }
 
 .input{
@@ -92,6 +92,7 @@ body{
     height: 50px;
     font-size: 18px;
     outline: none;
+
 }
 
 .btn{
@@ -101,6 +102,11 @@ body{
     border: none;
     border-radius: 5px;
     color: black;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    background-color: #3c8868;
 }
 
 .form{
@@ -108,6 +114,7 @@ body{
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    transition: 0.5s;
 }
 
 .none{
