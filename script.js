@@ -10,7 +10,7 @@ Vue.component('task',{
         }
       },
     template: `
-    <div v-if='!data.done' class="cur_case" @click="task_done()">
+    <div v-if='data.done' class="cur_case" @click="task_done()">
     <p class="cur_case_p">{{data.title}}</p>
     <img class="done" src="img/empty.png">
 </div>
@@ -39,7 +39,7 @@ date: new Date(),
             if(this.new_task.title != ''){
                 this.tasks.push({
                     title: this.new_task.title,
-                    done: 0
+                    done: 1
                 });
             }
             this.new_task.title='';
@@ -56,8 +56,14 @@ date: new Date(),
         action(id){
             if(this.tasks[id].done){
                 this.tasks[id].done = 0;
+                this.tasks.sort(function(a, b){
+                    return a.done-b.done
+                  })
             } else {
                 this.tasks[id].done = 1;
+                this.tasks.sort(function(a, b){
+                    return a.done-b.done
+                  })
             }
             return this.tasks[id].done;
           }

@@ -77,6 +77,10 @@ body{
     transition: 0.5s;
 }
 
+.list{
+    transition: 0.5s;
+}
+
 .add_btn_img{
     width: 100%;
 
@@ -84,7 +88,7 @@ body{
 
 .invert{
     filter: invert(1);
-    transform: rotate(45deg) translate(-70%,0);
+    transform: rotate(45deg) translate(-73%,0);
     transition: 0.5s;
 }
 
@@ -93,8 +97,9 @@ body{
     border-bottom: 2px solid gray;
     height: 50px;
     font-size: 18px;
+    width: 200px;
     outline: none;
-
+    padding: 0 10px;
 }
 
 .btn{

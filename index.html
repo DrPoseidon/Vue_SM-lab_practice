@@ -21,24 +21,6 @@
         </div>
         <div class="list">
             <task @task_done="action(index)" :data="data" v-for="(data,index) in tasks" :key="index"></task>
-            <!--
-            <div class="cur_case">
-                <p class="cur_case_p  done_c">Купить свитер</p>
-                <img class="done" src="img/add.png">
-            </div>
-            <div class="cur_case">
-                <p class="cur_case_p  done_c">Начать рекламную фазу</p>
-                <img class="done" src="img/add.png">
-            </div>
-            <div class="cur_case">
-                <p class="cur_case_p">Посмотреть шерлока</p>
-                <img class="done" src="img/empty.png">
-            </div>
-            <div class="cur_case">
-                <p class="cur_case_p">Погулять</p>
-                <img class="done" src="img/empty.png">
-            </div>
-            -->
         </div>
         <a class="add_btn" v-bind:class="{invert:isActive}" @click="show_input()"><img class="add_btn_img" src="img/add_plus.png"></a>
     <div class="form" v-if='seen'>
