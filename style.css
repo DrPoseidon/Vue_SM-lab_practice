@@ -30,7 +30,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .cur_date{
@@ -55,6 +55,8 @@ body{
     align-items: center;
     justify-content: space-between;
     margin: 20px 0;
+    transition: 0.5s;
+    padding: 10px;
 }
 
 .done,.empty{
@@ -119,4 +121,8 @@ body{
 
 .none{
     display: none;
+}
+
+.cur_case:hover{
+    background-color: rgba(131,131,131,.5);
 }

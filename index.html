@@ -11,16 +11,16 @@
     <div class="main_div" id="main_div">
         <div class="date_div">
             <div class="cur_date">
-                <p class="d">10</p>
+                <p class="d">{{date.getDay()}}</p>
                 <div class="in_cur_date">
-                    <p class="m">Июля</p>
-                    <p class="y">2020</p>
+                    <p class="m">{{['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентабрь','Ноябрь','Декабрь',''][date.getDay()]}}</p>
+                    <p class="y">{{date.getFullYear()}}</p>
                 </div>
             </div>
-            <p class="weekday">ПЯТНИЦА</p>
+            <p class="weekday">{{['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'][date.getDay()]}}</p>
         </div>
         <div class="list">
-            <task :data="data" v-for="(data,index) in tasks" :key="index"></task>
+            <task @task_done="action(index)" :data="data" v-for="(data,index) in tasks" :key="index"></task>
             <!--
             <div class="cur_case">
                 <p class="cur_case_p  done_c">Купить свитер</p>
