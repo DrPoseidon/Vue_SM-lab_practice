@@ -17,7 +17,7 @@
                     <p class="y">{{date.getFullYear()}}</p>
                 </div>
             </div>
-            <p class="weekday">{{['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'][date.getDay()]}}</p>
+            <p class="weekday">{{['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'][date.getDay()+1]}}</p>
         </div>
         <div class="list">
             <task @task_done="action(index)" :data="data" v-for="(data,index) in tasks" :key="index"></task>
